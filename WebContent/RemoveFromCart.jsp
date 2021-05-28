@@ -3,7 +3,6 @@
 <%
 String email = session.getAttribute("email").toString();
 int product_id = Integer.parseInt(request.getParameter("id"));
-System.out.println("Remove Cart : " + product_id);
 try {
 	Connection conn = ConnectionProvider.getCon();
 	Statement stmt = conn.createStatement();
