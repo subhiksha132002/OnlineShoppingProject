@@ -23,7 +23,7 @@ try{
 	ps.setString(6,email);
 	ps.executeUpdate();
 
-	PreparedStatement ps1=conn.prepareStatement("UPDATE CART SET address=?,city=?,state=?,country=?,mobilenumber=?,orderDate=now(),deliveryDate=Date_ADD(orderDate,INTERVAL 7 DAY),paymentMethod=?,transactionId=?,status=? where email=? and address is NULL");
+	PreparedStatement ps1=conn.prepareStatement("UPDATE CART SET address=?,city=?,state=?,country=?,mobilenumber=?,orderDate=CURRENT_DATE,deliveryDate=orderDate + INTERVAL '7 DAY',paymentMethod=?,transactionId=?,status=? where email=? and address is NULL");
 	ps1.setString(1,address);
 	ps1.setString(2,city);
 	ps1.setString(3,state);
