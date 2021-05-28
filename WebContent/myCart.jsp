@@ -66,8 +66,8 @@ h3 {
  %></th>
 				<%
 				if (total > 0) {
-				%><th scope="col"><a
-					href="addressPaymentForOrder.jsp">Proceed to order</a></th>
+				%><th scope="col"><a href="addressPaymentForOrder.jsp">Proceed
+						to order</a></th>
 				<%
 				}
 				%>
@@ -116,7 +116,6 @@ h3 {
 			<%
 			}
 			} catch (Exception e) {
-
 			System.out.println(e);
 			}
 			%>
