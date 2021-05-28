@@ -2,7 +2,7 @@
 <%@page import="java.sql.*" %>
 <%
 String email=session.getAttribute("email").toString();
-String product_id=request.getParameter("id");
+int product_id=Integer.parseInt(request.getParameter("id"));
 int quantity = 1;
 int product_price = 0;
 int product_total = 0;
@@ -34,10 +34,11 @@ try{
 		
 		PreparedStatement ps = conn.prepareStatement("insert into cart(email,product_id,quantity,price,total) values(?,?,?,?,?)");
 		ps.setString(1,email);
-		ps.setString(2,product_id);
+		ps.setInt(2,product_id);
 		ps.setInt(3,quantity);
 		ps.setInt(4,product_price);
 		ps.setInt(5,product_total);
+		ps.executeUpdate();
 		response.sendRedirect("home.jsp?msg=added");
 	}
 }catch(Exception e){
