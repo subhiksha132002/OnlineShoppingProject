@@ -22,19 +22,25 @@ if("added".equals(msg))
 {
 %>
 <h3 class="alert">Product added successfully!</h3>
-<%} %>
+<%
+}
+%>
 <%
 if("exist".equals(msg))
 {
 %>
 <h3 class="alert">Product already exist in you cart! Quantity  increased!</h3>
-<%} %>
+<%
+}
+%>
 <% 
 if("invalid".equals(msg))
 {
 %>
 <h3 class="alert">Something went wrong!!!Try again!!!</h3>
-<%} %>
+<%
+}
+%>
 <table>
         <thead>
           <tr>
@@ -52,9 +58,7 @@ try{
 	Statement stmt = conn.createStatement();
 	ResultSet rs = stmt.executeQuery("select * from products where active='Yes'"); 
 	while(rs.next()){
-		
 		%>
-}
           <tr>
             <td><%=rs.getString(1) %></td>
             <td><%=rs.getString(2) %></td>
