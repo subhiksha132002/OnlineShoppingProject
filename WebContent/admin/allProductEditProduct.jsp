@@ -42,16 +42,27 @@ if("wrong".equals(msg))
           </tr>
         </thead>
         <tbody>
-       
+        <%
+        try{
+        	Connection conn = ConnectionProvider.getCon();
+        	Statement stmt = conn.createStatement();
+        	ResultSet rs = stmt.executeQuery("select * from products"); 
+        	while(rs.next()){
+         %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><i class="fa fa-inr"></i> </i></td>
-            <td></td>
-            <td><a href="">Edit <i class='fas fa-pen-fancy'></i></a></td>
+            <td><%= rs.getString(1) %></td>
+            <td><%= rs.getString(2) %></td>
+            <td><%= rs.getString(3) %></td>
+            <td><i class="fa fa-inr"></i> <%= rs.getString(4) %></td>
+            <td><%= rs.getString(5) %></td>
+            <td><a href="editProduct.jsp?id=<%= rs.getString(1) %>">Edit <i class='fas fa-pen-fancy'></i></a></td>
           </tr>
-         
+          <%
+          }
+          }catch(Exception e){
+          
+        	  System.out.println(e);
+          }%> 
         </tbody>
       </table>
       <br>
