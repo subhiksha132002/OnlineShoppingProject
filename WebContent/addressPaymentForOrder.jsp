@@ -8,8 +8,8 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Home</title>
 <script>
-	if (window.history.forwart() != null)
-		window.history.forwart(1)
+	if (window.history.forward(1) != null)
+		window.history.forward(1);
 </script>
 </head>
 <body>
