@@ -39,8 +39,9 @@
 
 			Connection conn = ConnectionProvider.getCon();
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(
-			"SELECT * FROM CART INNER JOIN PRODUCTS ON CART.product_id=PRODUCTS.id WHERE CART.orderDate is not NULL and CART.status='Cancel'");
+			String query = "SELECT * FROM CART INNER JOIN PRODUCTS ON CART.product_id=PRODUCTS.id WHERE CART.orderDate is not NULL and CART.status='Cancel'";
+			ResultSet rs = stmt.executeQuery(query);
+			System.out.println(rs);
 			while (rs.next()) {
 		%>
 

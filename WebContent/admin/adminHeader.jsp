@@ -15,7 +15,7 @@
             <a href="allProductEditProduct.jsp">All Products & Edit Products <i class='fab fa-elementor'></i></a>
             <a href="messagesReceived.jsp">Messages Received <i class='fas fa-comment-alt'></i></a>
             <a href="ordersReceived.jsp">Orders Received <i class="fas fa-archive"></i></a>
-            <a href="cancelOrders.jsp">Cancel Orders <i class='fas fa-window-close'></i></a>
+            <!-- <a href="cancelOrders.jsp">Cancel Orders <i class='fas fa-window-close'></i></a> -->
             <a href="deliveredOrders.jsp">Delivered Orders <i class='fas fa-dolly'></i></a>
             <a href="../Logout.jsp">Logout <i class='fas fa-share-square'></i></a>
           </div>
