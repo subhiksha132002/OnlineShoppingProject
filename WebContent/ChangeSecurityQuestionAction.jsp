@@ -13,7 +13,6 @@ try {
 	while (rs.next()) {
 		check = 1;
 		stmt.executeUpdate("UPDATE USERS SET securityQuestion='" + securityQuestion + "',answer='" + newAnswer + "' WHERE email='" + email + "'");
-		System.out.println("Check" + check);
 		response.sendRedirect("changeSecurityQuestion.jsp?msg=done");
 	}
 	if (check == 0)
