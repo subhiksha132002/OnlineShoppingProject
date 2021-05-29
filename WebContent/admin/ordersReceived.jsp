@@ -72,7 +72,7 @@ if("invalid".equals(msg))
 			<td><%=rs.getString(8) %></td>
 			<td><%=rs.getString(9) %></td>
 			<td><%=rs.getString(11) %></td>
-			<td <%=rs.getString(12) %>></td>
+			<td> <%=rs.getString(12) %></td>
 			<td><%=rs.getString(13) %></td>
 			<td><%=rs.getString(14) %></td>
 			<td><%=rs.getString(15) %></td>

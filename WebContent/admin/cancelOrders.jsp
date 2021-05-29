@@ -18,8 +18,6 @@
 		Cancel Orders <i class='fas fa-window-close'></i>
 	</div>
 
-
-
 	<table id="customers">
 		<tr>
 			<th>Mobile Number</th>
@@ -37,36 +35,37 @@
 			<th scope="col">Status</th>
 		</tr>
 		<%
-        try{
-        	
-        	Connection conn=ConnectionProvider.getCon();
-        	Statement stmt=conn.createStatement();
-        	ResultSet rs=stmt.executeQuery("SELECT *FROM CART INNER JOIN PRODUCTS ON CART.product_id=PRODUCTS.id WHERE CART.orderDate is not NULL and CART.status='Cancel'");
-        	while(rs.next())
-        	{
-        		%>
+		try {
+
+			Connection conn = ConnectionProvider.getCon();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(
+			"SELECT * FROM CART INNER JOIN PRODUCTS ON CART.product_id=PRODUCTS.id WHERE CART.orderDate is not NULL and CART.status='Cancel'");
+			while (rs.next()) {
+		%>
 
 		<tr>
-			<td><%=rs.getString(10) %></td>
-			<td><%=rs.getString(17) %></td>
-			<td><%=rs.getString(3) %></td>
-			<td><i class="fa fa-inr"></i><%=rs.getString(5) %></td>
-			<td><%=rs.getString(6) %></td>
-			<td><%=rs.getString(7) %></td>
-			<td><%=rs.getString(8) %></td>
-			<td><%=rs.getString(9) %></td>
-			<td><%=rs.getString(11) %></td>
-			<td><%=rs.getString(12) %></td>
-			<td><%=rs.getString(13) %></td>
-			<td><%=rs.getString(14) %></td>
-			<td><%=rs.getString(15) %></td>
+			<td><%=rs.getString(10)%></td>
+			<td><%=rs.getString(17)%></td>
+			<td><%=rs.getString(3)%></td>
+			<td><i class="fa fa-inr"></i><%=rs.getString(5)%></td>
+			<td><%=rs.getString(6)%></td>
+			<td><%=rs.getString(7)%></td>
+			<td><%=rs.getString(8)%></td>
+			<td><%=rs.getString(9)%></td>
+			<td><%=rs.getString(11)%></td>
+			<td><%=rs.getString(12)%></td>
+			<td><%=rs.getString(13)%></td>
+			<td><%=rs.getString(14)%></td>
+			<td><%=rs.getString(15)%></td>
 		</tr>
 		<%
-         } }catch(Exception e){
-        	 
-        	 System.out.println(e);
-         }
-         %>
+		}
+		} catch (Exception e) {
+
+		System.out.println(e);
+		}
+		%>
 
 
 	</table>

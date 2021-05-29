@@ -20,10 +20,11 @@
 			total = rs.getInt(1);
 		}
 		ResultSet rs2 = stmt
-		.executeQuery("SELECT * from USERS INNER JOIN CART ON USERS.email = CART.email WHERE CART.email='" + email + "'and CART.status='bill'");
+		.executeQuery("SELECT * from USERS INNER JOIN CART ON USERS.email = CART.email WHERE CART.email='" + email
+				+ "'and CART.status='bill'");
 		while (rs2.next()) {
 	%>
-	<h3>Online shopping Bill </h3>
+	<h3>Online shopping Bill</h3>
 	<hr>
 	<div class="left-div">
 		<h3>
@@ -108,24 +109,37 @@
 			<th>Quantity</th>
 			<th>Sub Total</th>
 		</tr>
-<%
-ResultSet rs1=stmt.executeQuery("SELECT * FROM CART INNER JOIN  PRODUCTS ON  CART.product_id=PRODUCTS.id WHERE CART.email='"+email+"' and CART.status='bill'");
-while(rs1.next()){
-	sno=sno+1;
-%>
+		<%
+		ResultSet rs1 = stmt
+				.executeQuery("SELECT * FROM CART INNER JOIN  PRODUCTS ON  CART.product_id=PRODUCTS.id WHERE CART.email='"
+				+ email + "' and CART.status='bill'");
+		while (rs1.next()) {
+			sno = sno + 1;
+		%>
 
 		<tr>
-			<td><%out.println(sno); %></td>
-			<td><%=rs1.getString(17) %></td>
-			<td><%=rs1.getString(18) %></td>
-			<td><%=rs1.getString(19) %></td>
-			<td><%=rs1.getString(3) %></td>
-			<td><%=rs1.getString(5) %></td>
+			<td>
+				<%
+				out.println(sno);
+				%>
+			</td>
+			<td><%=rs1.getString(17)%></td>
+			<td><%=rs1.getString(18)%></td>
+			<td><%=rs1.getString(19)%></td>
+			<td><%=rs1.getString(3)%></td>
+			<td><%=rs1.getString(5)%></td>
 		</tr>
 		<tr>
-		<% } %>
+			<%
+			}
+			%>
+		
 	</table>
-	<h3>Total:<%out.println(total);%></h3>
+	<h3>
+		Total:<%
+	out.println(total);
+	%>
+	</h3>
 	<a href="continueShopping.jsp"><button class="button left-button">Continue
 			Shopping</button></a>
 	<a onclick="window.print();"><button class="button right-button">Print</button></a>
