@@ -5,10 +5,14 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
+<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/signup.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>ADD or Change Address</title>
 </head>
-<body>
+<body class="min-height:100vh">
 	<%
 	String msg = request.getParameter("msg");
 	if ("valid".equals(msg)) {

@@ -13,42 +13,43 @@ h3 {
 }
 </style>
 </head>
-<body>
+<body style="min-height: 100vh">
+	<div class="text-white text-center my-4" style="font-size: 30px;">
+		My Cart <i class='fas fa-cart-arrow-down'></i>
+	</div>
+	<%
+	String msg = request.getParameter("msg");
+	if ("notPossible".equals(msg)) {
+	%>
+	<h3 class="alert">There is only one Quantity! So click on remove!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("inc".equals(msg)) {
+	%>
+	<h3 class="alert">Quantity Increased Successfully!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("dec".equals(msg)) {
+	%>
+	<h3 class="alert">Quantity Decreased Successfully!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("remove".equals(msg)) {
+	%>
+	<h3 class="alert">Product Successfully Removed!</h3>
+	<%
+	}
+	%>
 	<div class="container mt-4">
-		<div style="color: white; text-align: center; font-size: 30px;">
-			My Cart <i class='fas fa-cart-arrow-down'></i>
-		</div>
-		<%
-		String msg = request.getParameter("msg");
-		if ("notPossible".equals(msg)) {
-		%>
-		<h3 class="alert">There is only one Quantity! So click on remove!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("inc".equals(msg)) {
-		%>
-		<h3 class="alert">Quantity Increased Successfully!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("dec".equals(msg)) {
-		%>
-		<h3 class="alert">Quantity Decreased Successfully!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("remove".equals(msg)) {
-		%>
-		<h3 class="alert">Product Successfully Removed!</h3>
-		<%
-		}
-		%><div class="row mt-5" style="align-content: flex-start">
+		<div class="row" style="align-content: flex-start">
 			<table class="table table-striped col-md-12 overflow-hidden">
-				<thead style="border-radius:25px;">
+				<thead style="border-radius: 25px;">
 					<%
 					int total = 0;
 					int sno = 0;
@@ -61,7 +62,8 @@ h3 {
 						}
 					%>
 					<tr>
-						<th scope="col" class="text-center">Total: <i class="fa fa-inr"></i> <%
+						<th scope="col" class="text-center">Total: <i
+							class="fa fa-inr"></i> <%
  out.println(total);
  %></th>
 						<%

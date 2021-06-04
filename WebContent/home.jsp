@@ -13,36 +13,36 @@ h3 {
 }
 </style>
 </head>
-<body>
+<body style="min-height: 100vh">
+	<div class="my-4 text-white text-center" style="font-size: 30px;">
+		Home <i class="fa fa-institution"></i>
+	</div>
+	<%
+	String msg = request.getParameter("msg");
+	if ("added".equals(msg)) {
+	%>
+	<h3 class="alert">Product added successfully!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("exist".equals(msg)) {
+	%>
+	<h3 class="alert">Product already exist in you cart! Quantity
+		increased!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("invalid".equals(msg)) {
+	%>
+	<h3 class="alert">Something went wrong!!!Try again!!!</h3>
+	<%
+	}
+	%>
 	<div class="container">
-		<div style="color: white; text-align: center; font-size: 30px;">
-			Home <i class="fa fa-institution"></i>
-		</div>
-		<%
-		String msg = request.getParameter("msg");
-		if ("added".equals(msg)) {
-		%>
-		<h3 class="alert">Product added successfully!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("exist".equals(msg)) {
-		%>
-		<h3 class="alert">Product already exist in you cart! Quantity
-			increased!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("invalid".equals(msg)) {
-		%>
-		<h3 class="alert">Something went wrong!!!Try again!!!</h3>
-		<%
-		}
-		%>
 		<div class="row">
-			<table class="table table-striped col-md-12">
+			<table class="table table-striped col-md-12 overflow-hidden">
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

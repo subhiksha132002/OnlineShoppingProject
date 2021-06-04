@@ -20,6 +20,7 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <!--Header-->
+<%String email=session.getAttribute("email").toString(); %>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"

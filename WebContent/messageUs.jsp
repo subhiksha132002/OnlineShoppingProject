@@ -12,9 +12,8 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Message Us</title>
 </head>
-<body>
-	<div class="container">
-		<div class="text-white text-center mt-3" style="font-size: 30px;">
+<body style="min-height: 100vh">
+<div class="text-white text-center my-3" style="font-size: 30px;">
 			Message Us <i class='fas fa-comment-alt'></i>
 		</div>
 		<%
@@ -34,7 +33,8 @@
 			}
 			%>
 
-		<div class="row mt-5" style="align-content: flex-start">
+	<div class="container">
+		<div class="row" style="align-content: flex-start">
 			<form class="col-md-12" action="MessageUsAction.jsp" method="post">
 				<input class="form-control mt-3" name="subject" type="text"
 					placeholder="Subject" required>
