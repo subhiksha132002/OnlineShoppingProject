@@ -4,7 +4,6 @@
 <%@include file="footer.jsp"%> 
 <html>
 <head>
-<link rel="stylesheet" href="css/changeDetails.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Change Mobile Number</title>
 </head>
@@ -14,23 +13,34 @@ String msg=request.getParameter("msg");
 if("done".equals(msg))
 {
 %>
-<h3 class="alert">Your Mobile Number successfully changed!</h3>
+<h3 class="text-center">Your Mobile Number successfully changed!</h3>
 <%} %>
 <%
 if("wrong".equals(msg))
 {
 %>
-<h3 class="alert">Your Password is wrong!</h3>
+<h3 class="text-center">Your Password is wrong!</h3>
 <%} %>
-<form action="ChangeMobileNumberAction.jsp" method="post">
- <h3>Enter Your New Mobile Number</h3>
-<input class="input-style" type="number" name="mobilenumber" placeholder="Enter Your New Mobile Number" required> 
- <hr>
-<h3>Enter Password (For Security)</h3>
-<input class="input-style" type="password" name="password" placeholder="Enter Password(For Security)" required> 
-<hr>
-<button class="button" type="submit">Save <i class='far fa-arrow-alt-circle-right'></i></button>
-</form>
+<div class="container" style="height: 100vh;">
+		<div class="row p-3">
+			<form class="offset-md-2 col-md-8" action="ChangeMobileNumberAction.jsp"
+				method="post">
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">Mobile Number</div>
+					<input class="form-control p-2 col-sm-8" name="mobilenumber"
+						type="number" required />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">Password</div>
+					<input class="form-control p-2 col-sm-8" name="password"
+						type="password" required />
+				</div>
+				<div class="text-center mt-4">
+					<button class="btn btn-success" type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 <br><br><br>
 </html>

@@ -8,36 +8,45 @@
 <link rel="stylesheet" href="css/changeDetails.css">
 <title>Change Details</title>
 <style>
-hr
-{width:70%;}</style>
+hr {
+	width: 70%;
+}
+</style>
 </head>
 <body>
-<%
-try{
-	
-	Connection conn = ConnectionProvider.getCon();
-	Statement stmt = conn.createStatement();
-	ResultSet rs = stmt
-	.executeQuery("select * from users where email='" + email + "'");
-	while (rs.next()) {
-		
-	%>
-<h3>Name:<%=rs.getString(1) %> </h3>
-<hr>
- <h3>Email:<%=rs.getString(2) %>  </h3>
- <hr>
- <h3>Mobile Number:<%=rs.getString(3) %>  </h3>
- <hr>
-<h3>Security Question:<%=rs.getString(4) %>  </h3>
-<hr>
-      <br>
-      <br>
-      <br>
-<%} 
-}catch(Exception e){
+	<div style="margin-top: 150px;">
+		<%
+		try {
 
-	System.out.println(e);
-	}
-	%>
+			Connection conn = ConnectionProvider.getCon();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from users where email='" + email + "'");
+			while (rs.next()) {
+		%>
+		<h3>
+			<%=rs.getString(1)%>
+		</h3>
+		<hr>
+		<h3>
+			<%=rs.getString(2)%>
+		</h3>
+		<hr>
+		<h3>
+			<%=rs.getString(3)%>
+		</h3>
+		<hr>
+		<h3>
+			<%=rs.getString(4)%>
+		</h3>
+		<hr>
+		<br> <br> <br>
+		<%
+		}
+		} catch (Exception e) {
+
+		System.out.println(e);
+		}
+		%>
+	</div>
 </body>
 </html>

@@ -4,7 +4,6 @@
 <%@include file="footer.jsp"%>
 <html>
 <head>
-<link rel="stylesheet" href="css/changeDetails.css">
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/signup.css" />
 <link rel="stylesheet"
@@ -17,14 +16,14 @@
 	String msg = request.getParameter("msg");
 	if ("valid".equals(msg)) {
 	%>
-	<h3 class="alert">Address Successfully Updated !</h3>
+	<h3 class="text-center">Address Successfully Updated !</h3>
 	<%
 	}
 	%>
 	<%
 	if ("invalid".equals(msg)) {
 	%>
-	<h3 class="alert">Some thing Went Wrong! Try Again!</h3>
+	<h3 class="text-center">Some thing Went Wrong! Try Again!</h3>
 	<%
 	}
 	%>
@@ -35,27 +34,36 @@
 		ResultSet rs = stmt.executeQuery("select * from users where email='" + email + "'");
 		while (rs.next()) {
 	%>
-	<form action="AddChangeAddressAction.jsp" method="post">
-		<h3>Enter Address</h3>
-		<input class="input-style" type="text" name="address"
-			value="<%=rs.getString(7)%>" placeholder="Enter Address" required>
-		<hr>
-		<h3>Enter city</h3>
-		<input class="input-style" type="text" name="city"
-			value="<%=rs.getString(8)%>" placeholder="Enter City" required>
-		<hr>
-		<h3>Enter State</h3>
-		<input class="input-style" type="text" name="state"
-			value="<%=rs.getString(9)%>" placeholder="Enter State" required>
-		<hr>
-		<h3>Enter country</h3>
-		<input class="input-style" type="text" name="country"
-			value="<%=rs.getString(10)%>" placeholder="Enter Country" required>
-		<hr>
-		<button class="button" type="submit">
-			Save <i class='far fa-arrow-alt-circle-right'></i>
-		</button>
-	</form>
+	<div class="container" style="height: 100vh;">
+		<div class="row p-3">
+			<form class="offset-md-2 col-md-8"
+				action="AddChangeAddressAction.jsp" method="post">
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">Address</div>
+					<input class="form-control p-2 col-sm-8" name="address"
+						type="text" required />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">City</div>
+					<input class="form-control p-2 col-sm-8" name="city"
+						type="text" required />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">State</div>
+					<input class="form-control p-2 col-sm-8" name="state"
+						type="text" required />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label col-sm-4">Country</div>
+					<input class="form-control p-2 col-sm-8" name="country"
+						type="text" required />
+				</div>
+				<div class="text-center mt-4">
+					<button class="btn btn-success" type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
 	<%
 	}
 	} catch (Exception e) {
