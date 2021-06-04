@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/signup-style.css">
+<link rel="stylesheet" href="css/font-awesome.css">
 <title>Signup</title>
 </head>
 <body>
