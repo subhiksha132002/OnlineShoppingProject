@@ -67,7 +67,7 @@ if("invalid".equals(msg))
 					<button type="submit" class="btn btn-success px-4 py-2">
 						Save</button>
 				</div>
-				<a class="d-block mt-4 text-center" href="#">Login to your
+				<a class="d-block mt-4 text-center" href="login.jsp">Login to your
 					account</a>
 			</form>
 		</div>
