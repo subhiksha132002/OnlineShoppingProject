@@ -6,42 +6,41 @@
 <head>
 <title>Add New Product</title>
 </head>
-<body>
+<body style="min-height: 100vh">
+	<%
+	String msg = request.getParameter("msg");
+	if ("done".equals(msg)) {
+	%>
+	<h3 class="text-center">Product Added Successfully!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("wrong".equals(msg)) {
+	%>
+	<h3 class="text-center">Some thing went wrong! Try Again!</h3>
+	<%
+	}
+	%>
+	<%
+	int id = 1;
+	try {
+		Connection conn = ConnectionProvider.getCon();
+		Statement stmt = conn.createStatement();
+		ResultSet rs = stmt.executeQuery("select max(id) from products");
+		while (rs.next()) {
+			id = rs.getInt(1);
+			id = id + 1;
+		}
+	} catch (Exception e) {
+	}
+	%>
 	<div class="container">
-		<%
-		String msg = request.getParameter("msg");
-		if ("done".equals(msg)) {
-		%>
-		<h3 class="text-center">Product Added Successfully!</h3>
-		<%
-		}
-		%>
-		<%
-		if ("wrong".equals(msg)) {
-		%>
-		<h3 class="text-center">Some thing went wrong! Try Again!</h3>
-		<%
-		}
-		%>
-		<%
-		int id = 1;
-		try {
-			Connection conn = ConnectionProvider.getCon();
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select max(id) from products");
-			while (rs.next()) {
-				id = rs.getInt(1);
-				id = id + 1;
-			}
-		} catch (Exception e) {
-		}
-		%>
-
 		<div class="row">
 			<form class="offset-md-2 col-md-8" action="AddNewProductAction.jsp"
 				method="post">
 				<h1>Add Product</h1>
-				<input type="hidden" name="id" value="<%=id%>" >
+				<input type="hidden" name="id" value="<%=id%>">
 				<div class="form-group row no-gutters">
 					<div class="form-label offset-sm-2 col-sm-2">Name</div>
 					<input class="form-control p-2 col-sm-6" name="name" type="text" />
@@ -70,9 +69,5 @@
 			</form>
 		</div>
 	</div>
-</body>
-<br>
-<br>
-<br>
 </body>
 </html>

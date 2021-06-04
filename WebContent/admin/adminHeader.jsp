@@ -52,5 +52,4 @@
 		</ul>
 	</div>
 </nav>
-<br>
 <!--table-->

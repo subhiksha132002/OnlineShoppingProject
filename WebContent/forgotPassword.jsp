@@ -8,7 +8,7 @@
 <title>Reset Password</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="height:100vh;">
 		<%
 String msg = request.getParameter("msg");
 if("done".equals(msg))

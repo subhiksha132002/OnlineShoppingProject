@@ -7,7 +7,7 @@
 <title>Signup</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="height: 100vh;">
 		<div class='whysign'>
 			<%
 			String msg = request.getParameter("msg");
@@ -24,8 +24,6 @@
 			<%
 			}
 			%>
-			<h2></h2>
-			<p></p>
 		</div>
 		<div class="row p-3">
 			<form class="offset-md-2 col-md-8" action="SignupAction.jsp"
@@ -71,16 +69,14 @@
 					<div class="form-label col-sm-4">Answer</div>
 					<textarea name="answer" class="form-control p-2 col-sm-8" required></textarea>
 				</div>
-				<div class="text-center mt-5">
+				<div class="text-center mt-2">
 					<button type="submit" class="btn btn-success px-4 py-2">
 						Sign Up</button>
 				</div>
-				<a class="d-block mt-4 text-center" href="login.jsp">Already
+				<a class="d-block mt-3 text-center" href="login.jsp">Already
 					have an account?</a>
 			</form>
 		</div>
-
 	</div>
-
 </body>
 </html>

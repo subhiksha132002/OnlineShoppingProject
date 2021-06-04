@@ -5,15 +5,16 @@ body {
     rgba(89, 194, 221, 1) 35%,
     rgba(200, 59, 241, 1) 100%
   );
+  min-height:100vh;	
 }
 .container {
-  height: 100vh;
+  height: 87vh;
 }
 .row {
   align-items: center;
   height: 100%;
 }
-.col-md-8 {
+.col-md-8,.col-md-12 {
   background-color: white;
   padding: 30px;
   border-radius: 25px;

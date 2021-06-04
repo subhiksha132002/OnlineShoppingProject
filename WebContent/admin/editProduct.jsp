@@ -13,8 +13,8 @@
 <style>
 </style>
 </head>
-<body>
-	<div class="container">
+<body style="min-height:100vh">
+	<div style="height:87vh" class="container">
 		<%
 		String id = request.getParameter("id");
 		try {
@@ -62,8 +62,5 @@
 			%>
 		</div>
 </body>
-<br>
-<br>
-<br>
 </body>
 </html>
