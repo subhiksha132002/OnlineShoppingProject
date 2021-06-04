@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/signup.css" />
 <title>Home</title>
 <style>
 h3
@@ -16,7 +18,7 @@ h3
 </style>
 </head>
 <body>
-<div style="color: white; text-align: center; font-size: 30px;">All Products & Edit Products <i class='fab fa-elementor'></i></div>
+<!-- <div style="color: white; text-align: center; font-size: 30px;">All Products & Edit Products <i class='fab fa-elementor'></i></div>-->
 <%
 String msg = request.getParameter("msg");
 if("done".equals(msg))
@@ -30,7 +32,7 @@ if("wrong".equals(msg))
 %>
 <h3 class="alert">Something went wrong!!! Try again!</h3>
 <%} %>
-<table>
+<table class="table table-striped mt-5">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -55,7 +57,7 @@ if("wrong".equals(msg))
             <td><%= rs.getString(3) %></td>
             <td><i class="fa fa-inr"></i> <%= rs.getString(4) %></td>
             <td><%= rs.getString(5) %></td>
-            <td><a href="editProduct.jsp?id=<%= rs.getString(1) %>">Edit <i class='fas fa-pen-fancy'></i></a></td>
+            <td><a href="editProduct.jsp?id=<%= rs.getString(1) %>" style="text-decoration:underline;color:black">Edit <i class='fas fa-pen-fancy'></i></a></td>
           </tr>
           <%
           }

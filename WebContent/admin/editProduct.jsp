@@ -1,70 +1,69 @@
-<%@page import="Project.ConnectionProvider" %>
-<%@page import="java.sql.*" %>
-<%@include file="adminHeader.jsp" %>
-<%@include file="../footer.jsp" %>
+<%@page import="Project.ConnectionProvider"%>
+<%@page import="java.sql.*"%>
+<%@include file="adminHeader.jsp"%>
+<%@include file="../footer.jsp"%>
 <html>
 <head>
-<link rel="stylesheet" href="../css/addNewProduct-style.css">
-<title>Add New Product</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/signup.css" />
+<title>Edit Product</title>
 <style>
-.back
-{
-  color: white;
-  margin-left: 2.5%
-}
 </style>
 </head>
 <body>
- <h2><a class="back" href="allProductEditProduct.jsp"><i class='fas fa-arrow-circle-left'> Back</i></a></h2>
-<%
-String id=request.getParameter("id");
-try{
-	Connection conn = ConnectionProvider.getCon();
-    Statement stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery("select * from products where id='"+id+"'"); 
-    while(rs.next()){
-    	
-    	
-   %>
-<form action="EditProductAction.jsp" method="post">
-<input type="hidden" name="id" value="<% out.println(id); %>" >
-<div class="left-div">
- <h3>Enter Name</h3>
-   <input class="input-style" type="text" name="name" value="<%=rs.getString(2)%>" required> 
-   <hr>
-</div>
+	<div class="container">
+		<%
+		String id = request.getParameter("id");
+		try {
+			Connection conn = ConnectionProvider.getCon();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from products where id='" + id + "'");
+			while (rs.next()) {
+		%>
+		<div class="row">
+			<form class="offset-md-2 col-md-8" action="EditProductAction.jsp" method="post">
+				<h1>Edit Product</h1>
+				<input type="hidden" name="id" value="<%=id%>">
+				<div class="form-group row no-gutters">
+					<div class="form-label offset-sm-2 col-sm-2">Name</div>
+					<input class="form-control p-2 col-sm-6" name="name" type="text" />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label offset-sm-2 col-sm-2">Category</div>
+					<input class="form-control p-2 col-sm-6" name="category"
+						type="text" />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label offset-sm-2 col-sm-2">Price</div>
+					<input class="form-control p-2 col-sm-6" name="price" type="number" />
+				</div>
+				<div class="form-group row no-gutters">
+					<div class="form-label offset-sm-2 col-sm-2">Active</div>
+					<select class="form-control p-2 col-sm-6" name="active">
+						<option value=""></option>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+				<div class="text-center mt-5">
+					<button type="submit" class="btn btn-success px-4 py-2">
+						Save Product</button>
+				</div>
+			</form>
+			<%
+			}
+			} catch (Exception e) {
 
-<div class="right-div">
-<h3>Enter Category</h3>
-  <input class="input-style" type="text" name="category" value="<%=rs.getString(3)%>" required> 
-<hr>
-</div>
-
-<div class="left-div">
-<h3>Enter Price</h3>
-  <input class="input-style" type="number" name="price" value="<%=rs.getString(4)%>" required>
-<hr>
-</div>
-
-<div class="right-div">
-<h3>Active</h3>
-<select class="input-style" name="active">
-<option value="Yes">Yes</option>
-<option value="No">No</option>
-</select>
- <hr>
-</div>
- <button  class="button">Save <i class='far fa-arrow-alt-circle-right'></i></button>
-</form>
-<%
-}
-}catch(Exception e){
-	
-	System.out.println(e);
-}
-%>
-
+			System.out.println(e);
+			}
+			%>
+		</div>
 </body>
-<br><br><br>
+<br>
+<br>
+<br>
 </body>
 </html>
