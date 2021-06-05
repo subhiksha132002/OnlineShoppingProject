@@ -1,6 +1,6 @@
 <%@page import="Project.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
-<%@include file="header.jsp"%>
+<%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%> 
 <html>
 <head>

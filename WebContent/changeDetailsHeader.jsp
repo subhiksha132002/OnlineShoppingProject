@@ -21,7 +21,7 @@
 </head>
 <!--Header-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="changeDetails.jsp">
+	<a class="navbar-brand" href="home.jsp">
 		<%String email=session.getAttribute("email").toString(); 
 		out.print(email);%>
 	</a>
@@ -34,6 +34,8 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav ml-auto">
+		<li class="nav-item mr-3"><a class="nav-link"
+				href="changeDetails.jsp">Your Profile</a></li>
 			<li class="nav-item mr-3"><a class="nav-link"
 				href="changePassword.jsp">Change Password</a></li>
 			<li class="nav-item mr-3"><a class="nav-link"

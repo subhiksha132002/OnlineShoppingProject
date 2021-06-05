@@ -8,21 +8,22 @@
 <title>Reset Password</title>
 </head>
 <body>
-	<div class="container" style="height:100vh;">
-		<%
-String msg = request.getParameter("msg");
-if("done".equals(msg))
-{
-%>
-		<h1>Password Changed Successfully!!!</h1>
-		<%} %>
-		<% 
-if("invalid".equals(msg))
-{
-%>
-		<h1>Something Went Wrong!!! Try Again !</h1>
-		<%} %>
-
+	<%
+	String msg = request.getParameter("msg");
+	if ("done".equals(msg)) {
+	%>
+	<h1>Password Changed Successfully!!!</h1>
+	<%
+	}
+	%>
+	<%
+	if ("invalid".equals(msg)) {
+	%>
+	<h1>Something Went Wrong!!! Try Again !</h1>
+	<%
+	}
+	%>
+	<div class="container" style="height: 100vh;">
 		<div class="row p-3">
 			<form class="offset-md-2 col-md-8" action="ForgotPasswordAction.jsp"
 				method="post">
@@ -61,14 +62,15 @@ if("invalid".equals(msg))
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label col-sm-4">Answer</div>
-					<textarea name="answer" class="form-control p-2 col-sm-8" type="text" required></textarea>
+					<textarea name="answer" class="form-control p-2 col-sm-8"
+						type="text" required></textarea>
 				</div>
 				<div class="text-center mt-5">
 					<button type="submit" class="btn btn-success px-4 py-2">
 						Save</button>
 				</div>
-				<a class="d-block mt-4 text-center" href="login.jsp">Login to your
-					account</a>
+				<a class="d-block mt-4 text-center" href="login.jsp">Login to
+					your account</a>
 			</form>
 		</div>
 	</div>

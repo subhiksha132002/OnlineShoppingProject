@@ -7,26 +7,24 @@
 <title>Login</title>
 </head>
 <body>
-	<div class='container' style="height:100vh;">
-		<div class='whysignLogin'>
-			<%
-			String msg = request.getParameter("msg");
-			if ("notexist".equals(msg)) {
-			%>
-			<h1>Incorrect Username or Password</h1>
-			<%
-			}
-			%>
-			<%
-			if ("invalid".equals(msg)) {
-			%>
-			<h1>Something Went Wrong!!! Try Again !</h1>
-			<%
-			}
-			%>
-			<h2></h2>
-			<p></p>
-		</div>
+	<div class='whysignLogin'>
+		<%
+		String msg = request.getParameter("msg");
+		if ("notexist".equals(msg)) {
+		%>
+		<h1>Incorrect Username or Password</h1>
+		<%
+		}
+		%>
+		<%
+		if ("invalid".equals(msg)) {
+		%>
+		<h1>Something Went Wrong!!! Try Again !</h1>
+		<%
+		}
+		%>
+	</div>
+	<div class='container' style="height: 100vh;">
 		<div class="row p-3">
 			<form action="LoginAction.jsp" method="post"
 				class="offset-md-2 col-md-8" action="">

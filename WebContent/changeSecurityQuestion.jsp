@@ -43,7 +43,7 @@
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label col-sm-4">Answer</div>
-					<textarea class="form-control p-2 col-sm-8" name="answer" required></textarea>
+					<textarea class="form-control p-2 col-sm-8" name="newanswer" required></textarea>
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label col-sm-4">Password</div>

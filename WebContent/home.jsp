@@ -41,7 +41,7 @@ h3 {
 	}
 	%>
 	<div class="container">
-		<div class="row">
+		<div class="row" style="align-content:flex-start">
 			<table class="table table-striped col-md-12 overflow-hidden">
 				<thead>
 					<tr>

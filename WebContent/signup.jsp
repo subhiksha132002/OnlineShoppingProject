@@ -7,24 +7,24 @@
 <title>Signup</title>
 </head>
 <body>
-	<div class="container" style="height: 100vh;">
-		<div class='whysign'>
-			<%
+	<div class='whysign'>
+		<%
 			String msg = request.getParameter("msg");
 			if ("valid".equals(msg)) {
 			%>
-			<h1>Successfully Registered!!!</h1>
-			<%
+		<h1>Successfully Registered!!!</h1>
+		<%
 			}
 			%>
-			<%
+		<%
 			if ("invalid".equals(msg)) {
 			%>
-			<h1>Something Went Wrong!!! Try Again !!</h1>
-			<%
+		<h1>Something Went Wrong!!! Try Again !!</h1>
+		<%
 			}
 			%>
-		</div>
+	</div>
+	<div class="container" style="height: 100vh;">
 		<div class="row p-3">
 			<form class="offset-md-2 col-md-8" action="SignupAction.jsp"
 				method="post">

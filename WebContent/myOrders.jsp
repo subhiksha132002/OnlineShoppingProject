@@ -11,7 +11,7 @@
 	<div class="text-white text-center my-4" style="font-size: 30px;">
 		My Orders <i class='fab fa-elementor'></i>
 	</div>
-	<div class="container mt-4">
+	<div class="container-fluid mt-4">
 		<div class="row" style="align-content: flex-start">
 			<table class="table table-striped col-md-12 overflow-hidden">
 				<thead>
