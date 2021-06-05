@@ -5,7 +5,6 @@
 <html>
 <head>
 <!-- <link rel="stylesheet" href="css/changeDetails.css"> -->
-<link rel="stylesheet" href="css/addressPaymentForOrder-style.css">
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/addressPaymentForOrder.css" />
 <script src='https://kit.fontawesome.com/a076d05399.js'>
@@ -107,18 +106,12 @@
 					<select name="paymentMethod" class="form-control p-2 col-sm-7">
 						<option value="Cash On Delivery(COD)">Cash On
 							Delivery(COD)</option>
-						<option value="Online Payment">Online Payment</option>
 					</select>
-				</div>
-				<div class="form-group row no-gutters">
-					<div class="form-label offset-sm-2 col-sm-2">Transaction ID</div>
-					<input name="transactionId" class="form-control p-2 col-sm-7"
-						type="text" />
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label offset-sm-2 col-sm-2">Mobile Number</div>
 					<input name="mobilenumber" class="form-control p-2 col-sm-7"
-						type="number" />
+						type="tel" />
 				</div>
 				<div class="row">
 					<button class="btn btn-primary offset-sm-9 col-sm-2" type="submit">Generate

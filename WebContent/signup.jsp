@@ -9,20 +9,20 @@
 <body>
 	<div class='whysign'>
 		<%
-			String msg = request.getParameter("msg");
-			if ("valid".equals(msg)) {
-			%>
+		String msg = request.getParameter("msg");
+		if ("valid".equals(msg)) {
+		%>
 		<h1>Successfully Registered!!!</h1>
 		<%
-			}
-			%>
+		}
+		%>
 		<%
-			if ("invalid".equals(msg)) {
-			%>
+		if ("invalid".equals(msg)) {
+		%>
 		<h1>Something Went Wrong!!! Try Again !!</h1>
 		<%
-			}
-			%>
+		}
+		%>
 	</div>
 	<div class="container" style="height: 100vh;">
 		<div class="row p-3">

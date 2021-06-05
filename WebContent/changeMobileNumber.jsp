@@ -13,7 +13,7 @@ String msg=request.getParameter("msg");
 if("done".equals(msg))
 {
 %>
-<h3 class="text-center">Your Mobile Number successfully changed!</h3>
+<h3 class="text-center mt-4">Your Mobile Number successfully changed!</h3>
 <%} %>
 <%
 if("wrong".equals(msg))
@@ -28,7 +28,7 @@ if("wrong".equals(msg))
 				<div class="form-group row no-gutters">
 					<div class="form-label col-sm-4">Mobile Number</div>
 					<input class="form-control p-2 col-sm-8" name="mobilenumber"
-						type="number" required />
+						type="tel" required />
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label col-sm-4">Password</div>

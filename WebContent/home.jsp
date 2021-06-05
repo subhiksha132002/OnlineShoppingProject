@@ -44,8 +44,7 @@ h3 {
 		<div class="row" style="align-content:flex-start">
 			<table class="table table-striped col-md-12 overflow-hidden">
 				<thead>
-					<tr>
-						<th scope="col">ID</th>
+					<tr class="text-center">
 						<th scope="col">Name</th>
 						<th scope="col">Category</th>
 						<th scope="col"><i class="fa fa-inr"></i> Price</th>
@@ -60,8 +59,7 @@ h3 {
 						ResultSet rs = stmt.executeQuery("select * from products where active='Yes'");
 						while (rs.next()) {
 					%>
-					<tr>
-						<td><%=rs.getString(1)%></td>
+					<tr class="text-center">
 						<td><%=rs.getString(2)%></td>
 						<td><%=rs.getString(3)%></td>
 						<td><i class="fa fa-inr"></i><%=rs.getString(4)%></td>

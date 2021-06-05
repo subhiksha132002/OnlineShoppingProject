@@ -46,7 +46,7 @@
 	<div class="container-fluid" style="height: 87vh">
 		<div class="row mt-5" style="align-content: flex-start">
 			<table class="table table-striped col-md-12 overflow-hidden" id="customers">
-				<tr>
+				<tr class="text-center">
 					<th>Mobile Number</th>
 					<th scope="col">Product Name</th>
 					<th scope="col">Quantity</th>
@@ -58,10 +58,8 @@
 					<th scope="col">Order Date</th>
 					<th scope="col">Expected Delivery Date</th>
 					<th scope="col">Payment Method</th>
-					<th scope="col">T-ID</th>
 					<th scope="col">Status</th>
-					<th scope="col">Cancel order <i class='fas fa-window-close'></i></th>
-					<th scope="col">Order Delivered <i class='fas fa-dolly'></i></i></th>
+					<th scope="col">Order Delivered</th>
 				</tr>
 				<%
 				try {
@@ -73,7 +71,7 @@
 				%>
 
 
-				<tr>
+				<tr class="text-center">
 					<td><%=rs.getString(10)%></td>
 					<td><%=rs.getString(17)%></td>
 					<td><%=rs.getString(3)%></td>
@@ -85,12 +83,7 @@
 					<td><%=rs.getString(11)%></td>
 					<td><%=rs.getString(12)%></td>
 					<td><%=rs.getString(13)%></td>
-					<td><%=rs.getString(14)%></td>
 					<td><%=rs.getString(15)%></td>
-					<td><a
-						href="CancelOrdersAction.jsp?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Cancel
-							<i class='fas fa-window-close'></i>
-					</a></td>
 					<td><a
 						href="DeliveredOrdersAction.jsp?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Delivered
 							<i class='fas fa-dolly'></i></i>

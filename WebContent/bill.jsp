@@ -79,13 +79,6 @@
 				</div>
 				<div class="form-group row no-gutters">
 					<div class="form-label offset-sm-2 col-sm-3"
-						style="font-size: 1.3rem; font-weight: bold;">Transaction Id</div>
-					<input name="address" value="<%=rs2.getString(24)%>"
-						style="font-size: 1.2rem" disabled
-						class="form-control p-2 col-sm-4" type="text" />
-				</div>
-				<div class="form-group row no-gutters">
-					<div class="form-label offset-sm-2 col-sm-3"
 						style="font-size: 1.3rem; font-weight: bold;">City</div>
 					<input name="address" value="<%=rs2.getString(17)%>"
 						style="font-size: 1.2rem" disabled

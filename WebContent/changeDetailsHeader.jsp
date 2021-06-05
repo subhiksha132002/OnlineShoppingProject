@@ -21,8 +21,8 @@
 </head>
 <!--Header-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="home.jsp">
-		<%String email=session.getAttribute("email").toString(); 
+	<a class="navbar-brand" href="home.jsp"> <i
+		class="fa fa-user-circle"></i> <%String email=session.getAttribute("email").toString(); 
 		out.print(email);%>
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -34,7 +34,7 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav ml-auto">
-		<li class="nav-item mr-3"><a class="nav-link"
+			<li class="nav-item mr-3"><a class="nav-link"
 				href="changeDetails.jsp">Your Profile</a></li>
 			<li class="nav-item mr-3"><a class="nav-link"
 				href="changePassword.jsp">Change Password</a></li>

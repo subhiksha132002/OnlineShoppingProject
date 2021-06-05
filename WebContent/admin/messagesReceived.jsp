@@ -23,7 +23,6 @@ h3 {
 			<table class="table table-striped col-md-12" style="overflow:hidden">
 				<thead>
 					<tr>
-						<th scope="col">ID</th>
 						<th scope="col">Email</th>
 						<th scope="col">Subject</th>
 						<th scope="col">Body</th>
@@ -38,7 +37,6 @@ h3 {
 						while (rs.next()) {
 					%>
 					<tr>
-						<td><%=rs.getString(1)%></td>
 						<td><%=rs.getString(2)%></td>
 						<td><%=rs.getString(3)%></td>
 						<td><%=rs.getString(4)%></td>
